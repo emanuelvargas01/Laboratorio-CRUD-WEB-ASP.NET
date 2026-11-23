@@ -1,0 +1,89 @@
+CREATE DATABASE crud;
+
+USE crud;
+
+CREATE TABLE Usuarios (
+    Id_Usuario INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(15),
+    Edad INT,
+    Correo VARCHAR(50),
+    Fecha_Nacimiento DATE
+);
+
+DELIMITER //
+
+CREATE PROCEDURE sp_load()
+BEGIN
+    SELECT * FROM Usuarios;
+END //
+
+DELIMITER ;
+
+DELIMITER &&
+
+CREATE PROCEDURE sp_create(
+    IN p_Nombre VARCHAR(15),
+    IN p_Edad INT,
+    IN p_Correo VARCHAR(50),
+    IN p_Fecha DATE
+)
+BEGIN
+    INSERT INTO Usuarios (Nombre, Edad, Correo, Fecha_Nacimiento)
+    VALUES (p_Nombre, p_Edad, p_Correo, p_Fecha);
+END &&
+
+DELIMITER ;
+DELIMITER &&
+
+DELIMITER //
+
+CREATE PROCEDURE sp_update(
+    IN p_Id INT,
+    IN p_Nombre VARCHAR(15),
+    IN p_Edad INT,
+    IN p_Correo VARCHAR(50),
+    IN p_Fecha DATE
+)
+BEGIN
+    UPDATE Usuarios
+    SET
+        Nombre = p_Nombre,
+        Edad = p_Edad,
+        Correo = p_Correo,
+        Fecha_Nacimiento = p_Fecha
+    WHERE Id_Usuario = p_Id;
+END //
+
+DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE sp_delete(
+    IN p_Id INT
+)
+BEGIN
+    DELETE FROM Usuarios
+    WHERE Id_Usuario = p_Id;
+END //
+
+DELIMITER ;
+DELIMITER //
+
+CREATE PROCEDURE sp_read(
+    IN p_Id INT
+)
+BEGIN
+    SELECT *
+    FROM Usuarios
+    WHERE Id_Usuario = p_Id;
+END //
+
+DELIMITER ;
+
+CREATE USER 'crud_app'@'localhost'
+IDENTIFIED BY 'Crud_2026';
+
+GRANT SELECT, INSERT, UPDATE, DELETE, EXECUTE
+ON crud.*
+TO 'crud_app'@'localhost';
+
+FLUSH PRIVILEGES;
