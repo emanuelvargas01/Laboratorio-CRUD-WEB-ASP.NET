@@ -1,8 +1,8 @@
-# Parcial #2 Implementación de conexion con Base de Datos MY SQL Estructura en Capas
-**Fecha:** [9/11/2026]
+# Laboratorio #7  CRUD EN ASP.NET WEB
+**Fecha:** [23/11/2026]
 
 ## Contenido del Repositorio
-En este programa se realiza una pequeña aplicacion que cuenta con un Login utilizando una base de datos My SQL, ademas se realizo una pequeña interfaz posterior al inicio de sesion y tambien se integro una pequeña interfaz donde se pueden administrar diversos productos. El programa es capaz de añadir, modificar y eliminar productos de la base de datos. 
+En este programa se realiza una pequeña aplicacion de CRUD web, donde se nos permite insertar, actualizar, eliminar y consultar datos sobre diferentes usuarios con correo, nombre, fecha de nacimiento y otros campos escenciales, se utiliza mysql como base de datos y c#, junto con html utilizando una masterpage para la aplicacion
 
 ## Tecnologías Utilizadas
 * **Lenguaje:** C#
@@ -15,70 +15,50 @@ En este programa se realiza una pequeña aplicacion que cuenta con un Login util
 
 ### Interfaz Principal  
 *(Aquí se incluye la imagen de la salida de la interfaz principal ejecutando el inicio del programa)*
-<img width="648" height="370" alt="image" src="https://github.com/user-attachments/assets/fa6e37d4-935f-41f0-b7c2-17f2129d8c11" />
-
-### Interfaz Principal  (Con Clave incorrecta)
-
-<img width="794" height="501" alt="image" src="https://github.com/user-attachments/assets/18b6c971-56e4-4e89-b01c-441e4695ae59" />
+<img width="1356" height="447" alt="image" src="https://github.com/user-attachments/assets/3b5fe75e-8f3f-4f9c-bd06-f21050517abb" />
 
 
-### Interfaz Interna
+### Funcion Read  
+<img width="735" height="598" alt="image" src="https://github.com/user-attachments/assets/33024731-b0ea-4369-a0cb-323ab6795c74" />
 
-<img width="1356" height="718" alt="image" src="https://github.com/user-attachments/assets/68f619b0-a4bf-48d2-b491-ca9833ce5d96" />
 
-### Interfaz de Productos
 
-<img width="590" height="601" alt="image" src="https://github.com/user-attachments/assets/ab3a2c81-f441-4286-8d36-875ad2a6569c" />
+### Funcion Actualizar
+
+<img width="1362" height="652" alt="image" src="https://github.com/user-attachments/assets/a780f0c0-4e32-4152-bbd4-1f8bfb0c9372" />
+
+
+### Funcion de Eliminar
+
+<img width="1347" height="609" alt="image" src="https://github.com/user-attachments/assets/5639bb04-e98d-45c9-bc2e-4610f26d4dfa" />
 
 ## Estructura de Carpetas o Directorios
 A continuación se presenta un esquema en árbol que explica de manera visual qué contiene el repositorio para facilitar la lectura del código:
 
 ```text
 .
+├── CRUD/
+│   ├── Pages/
+│   │   ├── CRUD.aspx
+│   │   ├── CRUD.aspx.cs
+│   │   ├── CRUD.aspx.designer.cs
+│   │   ├── Index.aspx
+│   │   ├── Index.aspx.cs
+│   │   ├── Index.aspx.designer.cs
+│   │   ├── MP.Master
+│   │   ├── MP.Master.cs
+│   │   └── MP.Master.designer.cs
+│   ├── Properties/
+│   │   └── AssemblyInfo.cs
+│   ├── CRUD.csproj
+│   ├── Web.Debug.config
+│   ├── Web.Release.config
+│   ├── Web.config
+│   └── packages.config
 ├── .gitattributes
 ├── .gitignore
-├── Base de datos.txt
-├── Lab de Capas.slnx
-├── README.md
-├── productosdb_productos.sql
-├── productosdb_routines.sql
-├── productosdb_usuarios.sql
-├── Datos/
-│   ├── Properties/
-│   ├── D_Conexion.cs
-│   ├── D_Producto.cs
-│   ├── D_Usuario.cs
-│   ├── Datos.csproj
-│   ├── app.config
-│   └── packages.config
-├── Entidades/
-│   ├── Properties/
-│   ├── E_Producto.cs
-│   ├── E_Usuario.cs
-│   ├── Entidades.csproj
-│   ├── IValidador.cs
-│   ├── app.config
-│   └── packages.config
-├── Negocio/
-│   ├── Properties/
-│   ├── Validadores/
-│   ├── HashService.cs
-│   └── IHashService.cs
-└── Presentacion/
-    ├── Properties/
-    ├── Resources/
-    ├── Utilidades/
-    ├── App.config
-    ├── Presentacion.csproj
-    ├── Program.cs
-    ├── frmLogin.cs
-    ├── frmLogin.resx
-    ├── frmPrincipal.cs
-    ├── frmPrincipal.resx
-    ├── frmProducto.Designer.cs
-    ├── frmProducto.cs
-    ├── frmProducto.resx
-    └── packages.config
+├── CRUD.slnx
+└── README.md
 
 ```
 ##Instrucciones de Ejecución / Uso
@@ -87,7 +67,7 @@ Sigue estos pasos y comandos específicos para arrancar la aplicación en tu ent
 Clonar el repositorio:
 
 Bash
-git clone https://github.com/emanuelvargas01/Parcial-de-Capas.git
+git clone https://github.com/emanuelvargas01/Laboratorio-CRUD-WEB-ASP.NET.git
 
 
 Autor y Contexto
@@ -95,7 +75,7 @@ Nombre: Emanuel Vargas
 
 Institución: Universidad Tecnológica de Panamá (UTP)
 
-Fecha de Realización: [9/11/2026]
+Fecha de Realización: [23/11/2026]
 
 Referencias
 Material Suministrado por la docente
